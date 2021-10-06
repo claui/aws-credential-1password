@@ -69,12 +69,18 @@ If you put it in your `~/.aws/config` file, the `aws` command will get secrets f
 
     ```
     [default]
-    credential_process = /path/to/aws-credential-1password
+    credential_process = /path/to/aws-credential-1password OP_VAULT OP_ITEM ACCESS_KEY_ID_FIELDNAME SECRET_ACCESS_KEY_FIELDNAME
     ```
 
-8. Replace the fragment `/path/to/aws-credential-1password` with the actual path to your `aws-credential-1password` script.
+8. In the config file, replace the fragment `/path/to/aws-credential-1password` with the actual path to your `aws-credential-1password` script.
 
-9. To confirm that everything is working, run:
+9. Run `op list vaults` to see the UUIDs of your vaults. In the config file, replace the fragment `OP_VAULT` with the UUID of your vault.
+
+10. In the config file, replace the fragment `OP_ITEM` with the UUID of your login item.
+
+11. In the 1Password app (or the exported JSON), look at the **names** of the 1Password fields that contain your AWS access key ID and your secret access key. In the config file, replace the fragments `ACCESS_KEY_ID_FIELDNAME` and `SECRET_ACCESS_KEY_FIELDNAME` with those field names.
+
+12. To confirm that everything is working, run:
 
     ```
     aws iam get-user
