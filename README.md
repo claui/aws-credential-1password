@@ -83,7 +83,7 @@ If you put it in your `~/.aws/config` file, the `aws` command will get secrets f
 12. To confirm that everything is working, run:
 
     ```
-    aws iam get-user
+    $ aws iam get-user
     ```
 
 
