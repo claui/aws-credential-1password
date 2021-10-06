@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "aws-credential-1password": "shellscript"
+  },
+  "files.exclude": {
+    "**/.git": true
+  }
+}
