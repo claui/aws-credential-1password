@@ -54,7 +54,7 @@ If you put it in your `~/.aws/config` file, the `aws` command will get secrets f
 2. Confirm that your 1Password CLI is properly configured and signed into your 1Password vault. To do that, check the output of the following shell command:
 
     ```
-    $ op list vaults
+    $ op vault list
     ```
 
 3. Next, open the 1Password app and create a login item with two fields named `Access Key ID` and `Secret Access Key`. Fill in your AWS credentials into those fields.
@@ -74,7 +74,7 @@ If you put it in your `~/.aws/config` file, the `aws` command will get secrets f
 
 8. In the config file, replace the fragment `/path/to/aws-credential-1password` with the actual path to your `aws-credential-1password` script.
 
-9. Run `op list vaults` to see the UUIDs of your vaults. In the config file, replace the fragment `OP_VAULT` with the UUID of your vault.
+9. Run `op vault list` to see the UUIDs of your vaults. In the config file, replace the fragment `OP_VAULT` with the UUID of your vault.
 
 10. In the config file, replace the fragment `OP_ITEM` with the UUID of your login item.
 
