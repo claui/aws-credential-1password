@@ -41,7 +41,7 @@ For example, if you use [aurutils](https://github.com/AladW/aurutils), run `aur 
 To install `aws-credential-1password` via [Homebrew](https://brew.sh/), run:
 
 ```
-brew install claui/public/op-aws-credentials-client
+brew install claui/public/aws-credential-1password
 ```
 
 If you put it in your `~/.aws/config` file, the `aws` command will get secrets from your 1Password vault.
