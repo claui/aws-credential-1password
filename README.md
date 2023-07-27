@@ -10,11 +10,9 @@ That way, your AWS credentials stay encrypted at rest on your device, which is k
 
 The tool is neither affiliated with nor endorsed by 1Password or AWS. It’s also **alpha-quality and largely untested.** Use it at your own risk.
 
-
 ## Prerequisites
 
 This tool requires Linux or macOS. You also need an active 1Password membership.
-
 
 ## Installation
 
@@ -28,24 +26,21 @@ To install `aws-credential-1password` manually:
 
 3. Copy the `aws-credential-1password` executable into a directory that is in your `PATH`.
 
-
 ### Installing via the Arch User Repository (AUR)
 
 To install `aws-credential-1password` via the [AUR](https://wiki.archlinux.org/title/Arch_User_Repository), use your favorite AUR helper to install the [aws-credential-1password](https://aur.archlinux.org/packages/aws-credential-1password/) package.
 
 For example, if you use [aurutils](https://github.com/AladW/aurutils), run `aur sync aws-credential-1password` and then `sudo pacman -Syu aws-credential-1password`.
 
-
 ### Installing via Homebrew
 
 To install `aws-credential-1password` via [Homebrew](https://brew.sh/), run:
 
-```
+```shell
 brew install claui/public/aws-credential-1password
 ```
 
 If you put it in your `~/.aws/config` file, the `aws` command will get secrets from your 1Password vault.
-
 
 ## Configuration
 
@@ -53,8 +48,8 @@ If you put it in your `~/.aws/config` file, the `aws` command will get secrets f
 
 2. Confirm that your 1Password CLI is properly configured and signed into your 1Password vault. To do that, check the output of the following shell command:
 
-    ```
-    $ op vault list
+    ```shell
+    op vault list
     ```
 
 3. Next, open the 1Password app and create a login item with two fields named `Access Key ID` and `Secret Access Key`. Fill in your AWS credentials into those fields.
@@ -67,7 +62,7 @@ If you put it in your `~/.aws/config` file, the `aws` command will get secrets f
 
 7. Edit your `~/.aws/config` as follows:
 
-    ```
+    ```ini
     [default]
     credential_process = /path/to/aws-credential-1password OP_VAULT OP_ITEM ACCESS_KEY_ID_FIELDNAME SECRET_ACCESS_KEY_FIELDNAME
     ```
@@ -82,15 +77,13 @@ If you put it in your `~/.aws/config` file, the `aws` command will get secrets f
 
 12. To confirm that everything is working, run:
 
+    ```shell
+    aws iam get-user
     ```
-    $ aws iam get-user
-    ```
-
 
 ## Usage
 
 Sign into the 1Password CLI, then use the `aws` command normally.
-
 
 ## License
 
@@ -100,7 +93,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+<http://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
